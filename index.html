@@ -18,7 +18,7 @@
         </div>
         
         <div class="anchor">
-            <a href="https://leetcode.cn/u/thyme-2/" target="_blank">Leetcode</a>
+            <a href="https://leetcode.cn/u/thyme-2" target="_blank">Leetcode</a>
         </div>
         
         <div class="anchor">
@@ -31,13 +31,17 @@
             <div class="main-text">
                 <h1>test</h1>
             </div>
-            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="image-container">
+                <img class="image" src="image/1.jpg" alt="image"/>
+            </div>
         </div>
     </section>
 
     <section class="main-section">
         <div class="backgroud-image">
-            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="image-container">
+                <img class="image" src="image/1.jpg" alt="image"/>
+            </div>
             <div class="main-text">
                 <h1>test</h1>
             </div>
@@ -49,13 +53,17 @@
             <div class="main-text">
                 <h1>test</h1>
             </div>
-            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="image-container">
+                <img class="image" src="image/1.jpg" alt="image"/>
+            </div>
         </div>
     </section>
 
     <section class="main-section">
         <div class="backgroud-image">
-            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="image-container">
+                <img class="image" src="image/1.jpg" alt="image"/>
+            </div>
             <div class="main-text">
                 <h1>test</h1>
             </div>
@@ -72,7 +80,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    /*topbar style*/
+    /*topbar style start*/
     .top-bar{
         background-image: url("image/top-bar-image.jpg");
         position: fixed;
@@ -107,6 +115,7 @@
         background-color: skyblue;
         opacity: 0.8;
     }
+    /*topbar style end*/
 
     .main-section{
         z-index: 0;
@@ -129,12 +138,29 @@
     .main-section:hover .backgroud-image{
         filter: brightness(100%);
     }
-    .main-section .image{
-        border-radius: 2px;
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 40vw;
+    .main-section .image-container{
+        position: relative;
+        left: 25%;
+        transform: translate(-50%, 0);
+        overflow: hidden;
+        width: 50%;
         height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        box-shadow: none;
+        transform: rotate(0deg);
+    }
+    .main-section .image-container:hover{
+        animation: light 8s linear infinite;
+    }
+    .main-section .image-container .image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-shadow: none;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: auto;
         z-index: 2;
     }
     .main-section:nth-of-type(1) .backgroud-image{
@@ -159,6 +185,29 @@
         flex-direction: column;
         font-family: '优设标题黑';
         color: #F1F1F1;
+    }
+
+    @keyframes light {
+        0% {
+            box-shadow: 0 0 50px pink;
+            transform: rotate(0deg);
+        }
+        25% {
+            box-shadow: 0 0 50px skyblue;
+            transform: rotate(90deg);
+        }
+        50% {
+            transform: rotate(180deg);
+            box-shadow: 0 0 50px yellow;
+        }
+        75% {
+            transform: rotate(270deg);
+            box-shadow: 0 0 50px white;
+        }
+        100% {
+            transform: rotate(360deg);
+            box-shadow: 0 0 50px pink;
+        }
     }
 </style>
 
