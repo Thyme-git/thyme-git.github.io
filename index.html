@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Thyme-blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+    <!-- this is a top-bar -->
+    <div class="top-bar">
+        <div class="anchor">
+            <a href="#">Top</a>
+        </div>
+        
+        <div class="anchor">
+            <a href="#">Music</a>
+        </div>
+        
+        <div class="anchor">
+            <a href="https://leetcode.cn/u/thyme-2/" target="_blank">Leetcode</a>
+        </div>
+        
+        <div class="anchor">
+            <a href="https://github.com/Thyme-git" target="_blank">Github</a>
+        </div>
+    </div>
+
+    <section class="main-section">
+        <div class="backgroud-image">
+            <div class="main-text">
+                <h1>test</h1>
+            </div>
+            <img class="image" src="image/1.jpg" alt="image"/>
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="backgroud-image">
+            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="main-text">
+                <h1>test</h1>
+            </div>
+        </div>
+    </section>   
+
+    <section class="main-section">
+        <div class="backgroud-image">
+            <div class="main-text">
+                <h1>test</h1>
+            </div>
+            <img class="image" src="image/1.jpg" alt="image"/>
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="backgroud-image">
+            <img class="image" src="image/1.jpg" alt="image"/>
+            <div class="main-text">
+                <h1>test</h1>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+<style>
+    /*body style*/
+    body {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*topbar style*/
+    .top-bar{
+        background-image: url("image/top-bar-image.jpg");
+        position: fixed;
+        opacity: 0.8;
+        height: 8%;
+        width: 100%;
+        border: 0;
+        z-index:3;
+        display: flex;
+        justify-content: space-between;
+    }
+    .top-bar .anchor{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        float: left;
+        z-index:2;
+        text-align: center;
+        flex: 4;
+        font-size: 150%;
+        transition: background-color 0.3s, opacity 0.3s;
+        border-radius: 30px;
+    }
+    .top-bar .anchor a{
+        flex: 1;
+        text-decoration: none;
+        color: black;
+    }
+    .top-bar .anchor:hover{
+        background-color: skyblue;
+        opacity: 0.8;
+    }
+
+    .main-section{
+        z-index: 0;
+    }
+    .main-section .backgroud-image{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        filter: brightness(50%);
+        transition-property: filter;
+        transition: filter 0.5s;
+    }
+    .main-section:hover .backgroud-image{
+        filter: brightness(100%);
+    }
+    .main-section .image{
+        border-radius: 2px;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 40vw;
+        height: auto;
+        z-index: 2;
+    }
+    .main-section:nth-of-type(1) .backgroud-image{
+        background-image: url("image/2.jpg");
+    }
+    .main-section:nth-of-type(2) .backgroud-image{
+        background-image: url("image/3.jpg");
+    }
+    .main-section:nth-of-type(3) .backgroud-image{
+        background-image: url("image/4.jpg");
+    }
+    .main-section:nth-of-type(4) .backgroud-image{
+        background-image: url("image/5.jpg");
+    }
+    .main-section .main-text{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: '优设标题黑';
+        color: #F1F1F1;
+    }
+</style>
+
+<script>
+</script>
